@@ -7,6 +7,12 @@
   </lbd-sidebar>
 
   <div class="main-panel">
-    <router-outlet></router-outlet>
+    <lbd-navbar></lbd-navbar>
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <lbd-footer></lbd-footer>
   </div>
 </div>
