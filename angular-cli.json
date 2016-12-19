@@ -8,8 +8,7 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        "assets",
-        "favicon.ico"
+        "assets"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -18,9 +17,22 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/animate.css/animate.css",
+        "assets/css/light-bootstrap-dashboard.css",
+        "assets/css/demo.css",
+        "assets/css/pe-icon-7-stroke.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "assets/js/bootstrap-checkbox-radio-switch.js",
+        "../node_modules/chartist/dist/chartist.js",
+        "assets/js/bootstrap-notify.js",
+        "assets/js/light-bootstrap-dashboard.js",
+        "assets/js/demo.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
