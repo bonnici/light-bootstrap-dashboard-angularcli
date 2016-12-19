@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
   public title = 'app works!';
 
   public ngOnInit(): void {
-    // demo.initChartist(); todo re-add when graph components are ready, move to afterviewinit? add typings, eventually re-write demo.js into angular style
+    // demo.initChartist(); todo re-add this and add typings when graph components are ready, move to afterviewinit?
 
     $.notify({
       icon: 'pe-7s-gift',

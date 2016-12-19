@@ -10,3 +10,13 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
+
+/*
+TODO
+----
+- Make dashboard stuff into components
+- Add routing and make other pages into components
+- Change demo.js into ts code in the right files
+- Add simple unit & e2e test
+- Fix favicon?
+*/
