@@ -1,8 +1,9 @@
 import {Component, Input} from '@angular/core';
 
 export class SidebarItem {
-  //todo change link to router thing & check active
-  constructor(public link: string, public title: string, public imageClass: string, public itemClass?: string) {}
+  public title: string;
+  public routerLink: string;
+  public imageClass: string;
 }
 
 @Component({

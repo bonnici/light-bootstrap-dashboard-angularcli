@@ -16,21 +16,19 @@ export class AppComponent implements OnInit {
     $.notify({
       icon: 'pe-7s-gift',
       message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
     },{
       type: 'info',
       timer: 4000
     });
 
     this.sidebarItems = [
-      new SidebarItem("dashboard.html", "Dashboard", "pe-7s-graph"),
-      new SidebarItem("user.html", "User Profile", "pe-7s-user"),
-      new SidebarItem("table.html", "Table List", "pe-7s-note2"),
-      new SidebarItem("typography.html", "Typography", "pe-7s-news-paper"),
-      new SidebarItem("icons.html", "Icons", "pe-7s-science"),
-      new SidebarItem("maps.html", "Maps", "pe-7s-map-marker"),
-      new SidebarItem("notifications.html", "Notifications", "pe-7s-bell"),
-      new SidebarItem("upgrade.html", "Upgrade to PRO", "pe-7s-rocket", "active-pro")
+      { title: "Dashboard", routerLink: "dashboard",  imageClass: "pe-7s-graph" },
+      { title: "User Profile", routerLink: "user", imageClass: "pe-7s-user" },
+      { title: "Table List", routerLink: "table", imageClass: "pe-7s-note2" },
+      { title: "Typography", routerLink: "typography",  imageClass: "pe-7s-news-paper" },
+      { title: "Icons", routerLink: "icons",  imageClass: "pe-7s-science" },
+      { title: "Maps", routerLink: "maps",  imageClass: "pe-7s-map-marker" },
+      { title: "Notifications", routerLink: "notifications",  imageClass: "pe-7s-bell" }
     ];
   }
 }

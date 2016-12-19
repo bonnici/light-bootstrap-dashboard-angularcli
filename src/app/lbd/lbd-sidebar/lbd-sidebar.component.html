@@ -18,8 +18,8 @@
     </div>
 
     <ul class="nav">
-      <li *ngFor="let item of items" [ngClass]="item.itemClass"> <!-- todo add class=active if active route -->
-        <a href="{{ item.link }}">
+      <li *ngFor="let item of items" routerLinkActive="active">
+        <a [routerLink]="item.routerLink">
           <i [ngClass]="item.imageClass"></i>
           <p>{{ item.title }}</p>
         </a>
