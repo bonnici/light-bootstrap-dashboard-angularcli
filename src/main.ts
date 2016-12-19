@@ -19,4 +19,5 @@ TODO
 - Change demo.js into ts code in the right files
 - Add simple unit & e2e test
 - Fix favicon?
+- Move CSS into components? Use the SASS instead?
 */

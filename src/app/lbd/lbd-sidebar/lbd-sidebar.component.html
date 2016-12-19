@@ -1,0 +1,29 @@
+<div class="sidebar" data-color="red" data-image="assets/img/sidebar-5.jpg">
+
+  <!--
+
+      Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+      Tip 2: you can also add an image using data-image tag
+
+  -->
+
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a href="{{ headerLink }}" class="simple-text">
+        <div *ngIf="headerLogoImg" class="logo-img">
+          <img src="{{ headerLogoImg }}"/>
+        </div>
+        {{ headerText }}
+      </a>
+    </div>
+
+    <ul class="nav">
+      <li *ngFor="let item of items" [ngClass]="item.itemClass"> <!-- todo add class=active if active route -->
+        <a href="{{ item.link }}">
+          <i [ngClass]="item.imageClass"></i>
+          <p>{{ item.title }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
