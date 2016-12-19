@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { SidebarItem } from './lbd/lbd-sidebar/lbd-sidebar.component';
 import { FooterItem } from './lbd/lbd-footer/lbd-footer.component';
+import { NavbarItem } from './lbd/lbd-navbar/lbd-navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { FooterItem } from './lbd/lbd-footer/lbd-footer.component';
 })
 export class AppComponent implements OnInit {
   public sidebarItems: SidebarItem[];
+  public navbarLeftItems: NavbarItem[];
+  public navbarRightItems: NavbarItem[];
   public footerItems: FooterItem[];
   public copywrite: string;
 
@@ -31,6 +34,36 @@ export class AppComponent implements OnInit {
       { title: "Icons", routerLink: "icons", imageClass: "pe-7s-science" },
       { title: "Maps", routerLink: "maps", imageClass: "pe-7s-map-marker" },
       { title: "Notifications", routerLink: "notifications", imageClass: "pe-7s-bell" }
+    ];
+
+    this.navbarLeftItems = [
+      { imageClass: "fa fa-dashboard", routerLink: "" },
+      {
+        imageClass: "fa fa-globe", routerLink: "", notifications: 5, dropdownItems: [
+          { title: "Notification 1", routerLink: "" },
+          { title: "Notification 2", routerLink: "" },
+          { title: "Notification 3", routerLink: "" },
+          { title: "Notification 4", routerLink: "" },
+          { title: "Another Notification", routerLink: "maps" }
+        ]
+      },
+      { imageClass: "fa fa-search", routerLink: "" }
+    ];
+
+    this.navbarRightItems = [
+      { title: "Account", routerLink: "" },
+      {
+        title: "Dropdown", routerLink: "", dropdownItems: [
+          { title: "Action", routerLink: "" },
+          { title: "Another action", routerLink: "" },
+          { title: "Something", routerLink: "" },
+          { title: "Another action", routerLink: "" },
+          { title: "Something", routerLink: "" },
+          { },
+          { title: "Separated link", routerLink: "" },
+        ]
+      },
+      { title: "Log out", routerLink: "" }
     ];
 
     this.footerItems = [

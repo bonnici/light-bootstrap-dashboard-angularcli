@@ -1,9 +1,9 @@
 import {Component, Input} from '@angular/core';
 
-export class SidebarItem {
-  public title: string;
-  public routerLink: string;
-  public imageClass: string;
+export interface SidebarItem {
+  title: string;
+  routerLink: string;
+  imageClass: string;
 }
 
 @Component({

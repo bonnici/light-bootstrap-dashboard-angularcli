@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
-export class FooterItem {
-  public title: string;
-  public routerLink: string;
+export interface FooterItem {
+  title: string;
+  routerLink: string;
 }
 
 @Component({

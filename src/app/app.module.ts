@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   { path: 'icons', component: IconsComponent },
   { path: 'maps', component: MapsComponent },
   { path: 'notifications', component: NotificationsComponent },
-  { path: '**', component: DashboardComponent }
+  { path: '**', redirectTo: 'dashboard' }
 ];
 
 @NgModule({
