@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { SidebarItem } from './lbd/lbd-sidebar/lbd-sidebar.component';
 import { FooterItem } from './lbd/lbd-footer/lbd-footer.component';
 import { NavbarItem } from './lbd/lbd-navbar/lbd-navbar.component';
+import { NotificationService } from './lbd/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +16,11 @@ export class AppComponent implements OnInit {
   public footerItems: FooterItem[];
   public copywrite: string;
 
-  public ngOnInit(): void {
-    // demo.initChartist(); todo re-add this and add typings when graph components are ready, move to afterviewinit?
+  constructor(private notificationService: NotificationService) {
+  }
 
-    $.notify({
-      icon: 'pe-7s-gift',
-      message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-    },{
-      type: 'info',
-      timer: 4000
-    });
+  public ngOnInit(): void {
+    this.notificationService.notify("Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.", 'pe-7s-gift');
 
     this.sidebarItems = [
       { title: "Dashboard", routerLink: "dashboard", imageClass: "pe-7s-graph" },
