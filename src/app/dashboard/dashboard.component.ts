@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
+import { Task } from '../lbd/lbd-task-list/lbd-task-list.component';
 
 
 @Component({
@@ -23,6 +24,8 @@ export class DashboardComponent implements OnInit {
   public activityChartOptions: any;
   public activityChartResponsive: any[];
   public activityChartLegendItems: LegendItem[];
+
+  public tasks: Task[];
 
   constructor() { }
 
@@ -105,5 +108,26 @@ export class DashboardComponent implements OnInit {
       { title: 'Tesla Model S', imageClass: 'fa fa-circle text-info' },
       { title: 'BMW 5 Series', imageClass: 'fa fa-circle text-danger' }
     ];
+
+    this.tasks = [
+      { title: 'Sign contract for "What are conference organizers afraid of?"', checked: false },
+      { title: 'Lines From Great Russian Literature? Or E-mails From My Boss?', checked: true },
+      { title: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit', checked: true },
+      { title: 'Create 4 Invisible User Experiences you Never Knew About', checked: false },
+      { title: 'Read "Following makes Medium better"', checked: false },
+      { title: 'Unfollow 5 enemies from twitter', checked: false },
+    ];
+  }
+
+  public taskChecked(data: any) {
+    console.log('Task checked for', data);
+  }
+
+  public taskEditClicked(index: number) {
+    console.log('Edit clicked for', index);
+  }
+
+  public taskRemoveClicked(index: number) {
+    console.log('Edit clicked for', index);
   }
 }
