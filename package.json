@@ -32,7 +32,6 @@
   "devDependencies": {
     "@angular/compiler-cli": "2.2.3",
     "@types/bootstrap": "^3.3.32",
-    "@types/chartist": "^0.9.34",
     "@types/jasmine": "2.5.38",
     "@types/jquery": "^1.10.31",
     "@types/node": "^6.0.42",
