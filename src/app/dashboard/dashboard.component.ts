@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import { Task } from '../lbd/lbd-task-list/lbd-task-list.component';
+import {NotificationService, NotificationOptions} from "../lbd/notification.service";
 
 
 @Component({
@@ -27,9 +28,14 @@ export class DashboardComponent implements OnInit {
 
   public tasks: Task[];
 
-  constructor() { }
+  constructor(private notificationService: NotificationService) { }
 
   public ngOnInit() {
+    this.notificationService.notify(new NotificationOptions({
+      message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.",
+      icon: 'pe-7s-gift'
+    }));
+
     this.emailChartType = ChartType.Pie;
     this.emailChartData = {
       labels: ['62%','32%','6%'],

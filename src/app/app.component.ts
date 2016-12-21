@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { SidebarItem } from './lbd/lbd-sidebar/lbd-sidebar.component';
 import { FooterItem } from './lbd/lbd-footer/lbd-footer.component';
 import { NavbarItem } from './lbd/lbd-navbar/lbd-navbar.component';
-import { NotificationService } from './lbd/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +15,10 @@ export class AppComponent implements OnInit {
   public footerItems: FooterItem[];
   public copywrite: string;
 
-  constructor(private notificationService: NotificationService) {
+  constructor() {
   }
 
   public ngOnInit(): void {
-    this.notificationService.notify("Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.", 'pe-7s-gift');
-
     this.sidebarItems = [
       { title: "Dashboard", routerLink: "dashboard", imageClass: "pe-7s-graph" },
       { title: "User Profile", routerLink: "user", imageClass: "pe-7s-user" },

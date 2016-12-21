@@ -1,10 +1,37 @@
 import { Injectable } from '@angular/core';
 
 export enum NotificationType {
-  Info,
+  Info = 1,
   Success,
   Warning,
   Danger
+}
+
+export class NotificationOptions {
+  public message: string;
+  public icon: string = null;
+  public timer: number = 4000;
+  public type: NotificationType = NotificationType.Info;
+  public from: string = 'top';
+  public align: string = 'right';
+
+  public constructor(
+    fields: {
+      message: string,
+      icon?: string,
+      timer?: number,
+      type?: NotificationType,
+      from?: string,
+      align?: string
+    }) {
+
+    this.message = fields.message;
+    this.icon = fields.icon || this.icon;
+    this.timer = fields.timer || this.timer;
+    this.type = fields.type || this.type;
+    this.from = fields.from || this.from;
+    this.align = fields.align || this.align;
+  }
 }
 
 @Injectable()
@@ -12,9 +39,9 @@ export class NotificationService {
 
   constructor() { }
 
-  public notify(message: string, icon: string, timer?: number, type?: NotificationType, from?: string, align?: string): void {
+  public notify(options: NotificationOptions): void {
     let typeString;
-    switch (type) {
+    switch (options.type) {
       case NotificationType.Success:
         typeString = 'success';
         break;
@@ -31,15 +58,15 @@ export class NotificationService {
 
     $.notify(
       {
-        icon: icon,
-        message: message
+        icon: options.icon,
+        message: options.message
       },
       {
         type: typeString,
-        timer: timer || 4000,
+        timer: options.timer,
         placement: {
-          from: from || 'top',
-          align: align || 'right'
+          from: options.from,
+          align: options.align
         }
       });
   }
