@@ -7,14 +7,29 @@ import { LbdFooterComponent } from './lbd-footer/lbd-footer.component';
 import { LbdChartComponent } from './lbd-chart/lbd-chart.component';
 import { LbdTaskListComponent } from './lbd-task-list/lbd-task-list.component';
 import { NotificationService } from './notification.service';
+import { LbdTableComponent } from './lbd-table/lbd-table.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule
   ],
-  declarations: [LbdSidebarComponent, LbdNavbarComponent, LbdFooterComponent, LbdChartComponent, LbdTaskListComponent],
-  exports: [LbdSidebarComponent, LbdNavbarComponent, LbdFooterComponent, LbdChartComponent, LbdTaskListComponent],
-  providers: [NotificationService]
+  providers: [NotificationService],
+  declarations: [
+    LbdSidebarComponent,
+    LbdNavbarComponent,
+    LbdFooterComponent,
+    LbdChartComponent,
+    LbdTaskListComponent,
+    LbdTableComponent
+  ],
+  exports: [
+    LbdSidebarComponent,
+    LbdNavbarComponent,
+    LbdFooterComponent,
+    LbdChartComponent,
+    LbdTaskListComponent,
+    LbdTableComponent
+  ]
 })
 export class LbdModule { }

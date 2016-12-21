@@ -16,9 +16,10 @@ TODO
 ----
 - Make dashboard stuff into components
 - Add routing and make other pages into components
-- Add simple unit & e2e test
-- Move CSS into components? Use the SASS instead?
-- Make components into pushstate?
+- Fix navbar title
 - Fix checkboxes not showing up if you navigate to the dashboard page
 - Animate cards loading in (animations/trigger in component.ts files)
+- Move CSS into components? Use the SASS instead?
+- Make components into pushstate?
+- Add simple unit & e2e test
 */
