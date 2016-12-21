@@ -16,9 +16,8 @@ TODO
 ----
 - Make dashboard stuff into components
 - Add routing and make other pages into components
-- Change demo.js into ts code in the right files
 - Add simple unit & e2e test
-- Fix favicon?
 - Move CSS into components? Use the SASS instead?
 - Make components into pushstate?
+- Fix checkboxes not showing up if you navigate to the dashboard page
 */

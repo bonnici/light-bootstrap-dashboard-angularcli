@@ -30,8 +30,7 @@
         "assets/js/bootstrap-checkbox-radio-switch.js",
         "../node_modules/chartist/dist/chartist.js",
         "assets/js/bootstrap-notify.js",
-        "assets/js/light-bootstrap-dashboard.js",
-        "assets/js/demo.js"
+        "assets/js/light-bootstrap-dashboard.js"
       ],
       "environments": {
         "source": "environments/environment.ts",

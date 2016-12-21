@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import { Task } from '../lbd/lbd-task-list/lbd-task-list.component';
-import {NotificationService, NotificationOptions} from "../lbd/notification.service";
+import {NotificationService, NotificationOptions} from '../lbd/notification.service';
 
 
 @Component({
@@ -32,13 +32,13 @@ export class DashboardComponent implements OnInit {
 
   public ngOnInit() {
     this.notificationService.notify(new NotificationOptions({
-      message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.",
+      message: 'Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.',
       icon: 'pe-7s-gift'
     }));
 
     this.emailChartType = ChartType.Pie;
     this.emailChartData = {
-      labels: ['62%','32%','6%'],
+      labels: ['62%', '32%', '6%'],
       series: [62, 32, 6]
     };
     this.emailChartLegendItems = [
@@ -60,7 +60,7 @@ export class DashboardComponent implements OnInit {
       low: 0,
       high: 800,
       showArea: true,
-      height: "245px",
+      height: '245px',
       axisX: {
         showGrid: false,
       },
@@ -98,7 +98,7 @@ export class DashboardComponent implements OnInit {
       axisX: {
         showGrid: false
       },
-      height: "245px"
+      height: '245px'
     };
     this.activityChartResponsive = [
       ['screen and (max-width: 640px)', {
@@ -116,24 +116,15 @@ export class DashboardComponent implements OnInit {
     ];
 
     this.tasks = [
-      { title: 'Sign contract for "What are conference organizers afraid of?"', checked: false },
+      { title: 'Sign contract for \'What are conference organizers afraid of?\'', checked: false },
       { title: 'Lines From Great Russian Literature? Or E-mails From My Boss?', checked: true },
-      { title: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit', checked: true },
+      {
+        title: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit',
+        checked: true
+      },
       { title: 'Create 4 Invisible User Experiences you Never Knew About', checked: false },
-      { title: 'Read "Following makes Medium better"', checked: false },
+      { title: 'Read \'Following makes Medium better\'', checked: false },
       { title: 'Unfollow 5 enemies from twitter', checked: false },
     ];
-  }
-
-  public taskChecked(data: any) {
-    console.log('Task checked for', data);
-  }
-
-  public taskEditClicked(index: number) {
-    console.log('Edit clicked for', index);
-  }
-
-  public taskRemoveClicked(index: number) {
-    console.log('Edit clicked for', index);
   }
 }
