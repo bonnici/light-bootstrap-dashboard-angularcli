@@ -20,4 +20,5 @@ TODO
 - Move CSS into components? Use the SASS instead?
 - Make components into pushstate?
 - Fix checkboxes not showing up if you navigate to the dashboard page
+- Animate cards loading in (animations/trigger in component.ts files)
 */
