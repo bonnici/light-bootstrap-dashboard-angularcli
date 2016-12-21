@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NavbarTitleService } from '../navbar-title.service';
 
 export interface NavbarDropdownItem {
   title?: string;
@@ -18,12 +19,18 @@ export interface NavbarItem {
   templateUrl: './lbd-navbar.component.html',
   styleUrls: ['./lbd-navbar.component.css']
 })
-export class LbdNavbarComponent {
+export class LbdNavbarComponent implements OnInit {
   @Input()
   public leftItems: NavbarItem[];
 
   @Input()
   public rightItems: NavbarItem[];
 
-  constructor() { }
+  public title: string;
+
+  constructor(private navbarTitleService: NavbarTitleService) { }
+
+  public ngOnInit(): void {
+    this.navbarTitleService.titleChanged$.subscribe(title => this.title = title);
+  }
 }

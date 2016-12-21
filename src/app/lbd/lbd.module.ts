@@ -9,13 +9,14 @@ import { LbdTaskListComponent } from './lbd-task-list/lbd-task-list.component';
 import { NotificationService } from './notification.service';
 import { LbdTableComponent } from './lbd-table/lbd-table.component';
 import { LbdUserProfileComponent } from './lbd-user-profile/lbd-user-profile.component';
+import { NavbarTitleService } from './navbar-title.service';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule
   ],
-  providers: [NotificationService],
+  providers: [NotificationService, NavbarTitleService],
   declarations: [
     LbdSidebarComponent,
     LbdNavbarComponent,

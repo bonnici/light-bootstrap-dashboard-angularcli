@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 @Component({
   selector: 'app-user',
@@ -9,9 +10,11 @@ export class UserComponent implements OnInit {
   public formData: any;
   public userAbout: string;
 
-  constructor() { }
+  constructor(private navbarTitleService: NavbarTitleService) { }
 
   public ngOnInit() {
+    this.navbarTitleService.updateTitle('User Profile');
+
     this.userAbout = '"Lamborghini Mercy <br>Your chick she so thirsty <br>I\'m in that two seat Lambo"';
 
     this.formData = {

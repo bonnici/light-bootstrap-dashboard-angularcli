@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
   styleUrls: ['./maps.component.css']
 })
-export class MapsComponent {
+export class MapsComponent implements OnInit {
   public lat = 40.748817;
   public lng = -73.985428;
   public zoom = 13;
@@ -13,133 +14,139 @@ export class MapsComponent {
   public scrollwheel = false; // we disable de scroll over the map, it is a really annoying when you scroll through page
   public styles = [
     {
-      "featureType": "water",
-      "stylers": [
+      'featureType': 'water',
+      'stylers': [
         {
-          "saturation": 43
+          'saturation': 43
         },
         {
-          "lightness": -11
+          'lightness': -11
         },
         {
-          "hue": "#0088ff"
+          'hue': '#0088ff'
         }
       ]
     },
     {
-      "featureType": "road",
-      "elementType": "geometry.fill",
-      "stylers": [
+      'featureType': 'road',
+      'elementType': 'geometry.fill',
+      'stylers': [
         {
-          "hue": "#ff0000"
+          'hue': '#ff0000'
         },
         {
-          "saturation": -100
+          'saturation': -100
         },
         {
-          "lightness": 99
+          'lightness': 99
         }
       ]
     },
     {
-      "featureType": "road",
-      "elementType": "geometry.stroke",
-      "stylers": [
+      'featureType': 'road',
+      'elementType': 'geometry.stroke',
+      'stylers': [
         {
-          "color": "#808080"
+          'color': '#808080'
         },
         {
-          "lightness": 54
+          'lightness': 54
         }
       ]
     },
     {
-      "featureType": "landscape.man_made",
-      "elementType": "geometry.fill",
-      "stylers": [
+      'featureType': 'landscape.man_made',
+      'elementType': 'geometry.fill',
+      'stylers': [
         {
-          "color": "#ece2d9"
+          'color': '#ece2d9'
         }
       ]
     },
     {
-      "featureType": "poi.park",
-      "elementType": "geometry.fill",
-      "stylers": [
+      'featureType': 'poi.park',
+      'elementType': 'geometry.fill',
+      'stylers': [
         {
-          "color": "#ccdca1"
+          'color': '#ccdca1'
         }
       ]
     },
     {
-      "featureType": "road",
-      "elementType": "labels.text.fill",
-      "stylers": [
+      'featureType': 'road',
+      'elementType': 'labels.text.fill',
+      'stylers': [
         {
-          "color": "#767676"
+          'color': '#767676'
         }
       ]
     },
     {
-      "featureType": "road",
-      "elementType": "labels.text.stroke",
-      "stylers": [
+      'featureType': 'road',
+      'elementType': 'labels.text.stroke',
+      'stylers': [
         {
-          "color": "#ffffff"
+          'color': '#ffffff'
         }
       ]
     },
     {
-      "featureType": "poi",
-      "stylers": [
+      'featureType': 'poi',
+      'stylers': [
         {
-          "visibility": "off"
+          'visibility': 'off'
         }
       ]
     },
     {
-      "featureType": "landscape.natural",
-      "elementType": "geometry.fill",
-      "stylers": [
+      'featureType': 'landscape.natural',
+      'elementType': 'geometry.fill',
+      'stylers': [
         {
-          "visibility": "on"
+          'visibility': 'on'
         },
         {
-          "color": "#b8cb93"
+          'color': '#b8cb93'
         }
       ]
     },
     {
-      "featureType": "poi.park",
-      "stylers": [
+      'featureType': 'poi.park',
+      'stylers': [
         {
-          "visibility": "on"
+          'visibility': 'on'
         }
       ]
     },
     {
-      "featureType": "poi.sports_complex",
-      "stylers": [
+      'featureType': 'poi.sports_complex',
+      'stylers': [
         {
-          "visibility": "on"
+          'visibility': 'on'
         }
       ]
     },
     {
-      "featureType": "poi.medical",
-      "stylers": [
+      'featureType': 'poi.medical',
+      'stylers': [
         {
-          "visibility": "on"
+          'visibility': 'on'
         }
       ]
     },
     {
-      "featureType": "poi.business",
-      "stylers": [
+      'featureType': 'poi.business',
+      'stylers': [
         {
-          "visibility": "simplified"
+          'visibility': 'simplified'
         }
       ]
     }
   ];
+
+  constructor(private navbarTitleService: NavbarTitleService) { }
+
+  public ngOnInit() {
+    this.navbarTitleService.updateTitle('Maps');
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TableData } from '../lbd/lbd-table/lbd-table.component';
+import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 @Component({
   selector: 'app-table',
@@ -9,9 +10,11 @@ import { TableData } from '../lbd/lbd-table/lbd-table.component';
 export class TableComponent implements OnInit {
   public tableData: TableData;
 
-  constructor() { }
+  constructor(private navbarTitleService: NavbarTitleService) { }
 
   public ngOnInit() {
+    this.navbarTitleService.updateTitle('Table List');
+
     this.tableData = {
       headerRow: ['ID', 'Name', 'Salary', 'Country', 'City'],
       dataRows: [

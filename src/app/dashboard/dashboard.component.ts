@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import { Task } from '../lbd/lbd-task-list/lbd-task-list.component';
 import {NotificationService, NotificationOptions} from '../lbd/notification.service';
+import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 
 @Component({
@@ -28,9 +29,11 @@ export class DashboardComponent implements OnInit {
 
   public tasks: Task[];
 
-  constructor(private notificationService: NotificationService) { }
+  constructor(private navbarTitleService: NavbarTitleService, private notificationService: NotificationService) { }
 
   public ngOnInit() {
+    this.navbarTitleService.updateTitle('Dashboard');
+
     this.notificationService.notify(new NotificationOptions({
       message: 'Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.',
       icon: 'pe-7s-gift'

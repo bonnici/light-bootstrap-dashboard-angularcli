@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 @Component({
   selector: 'app-icons',
@@ -9,9 +10,11 @@ export class IconsComponent implements OnInit {
 
   public iconClasses: string[];
 
-  constructor() { }
+  constructor(private navbarTitleService: NavbarTitleService) { }
 
   ngOnInit() {
+    this.navbarTitleService.updateTitle('Icons');
+
     this.iconClasses = [
       'pe-7s-album',
       'pe-7s-arc',

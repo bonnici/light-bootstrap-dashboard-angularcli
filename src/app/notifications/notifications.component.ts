@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NotificationService, NotificationType, NotificationOptions} from '../lbd/notification.service';
+import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.css']
 })
-export class NotificationsComponent {
+export class NotificationsComponent implements OnInit {
 
-  constructor(private notificationService: NotificationService) { }
+  constructor(private navbarTitleService: NavbarTitleService, private notificationService: NotificationService) { }
+
+  public ngOnInit() {
+    this.navbarTitleService.updateTitle('Notifications');
+  }
 
   public showNotification(from: string, align: string) {
     let type = Math.floor((Math.random() * 4) + 1);

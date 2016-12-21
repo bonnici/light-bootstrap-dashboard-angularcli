@@ -14,9 +14,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 TODO
 ----
-- Make dashboard stuff into components
-- Add routing and make other pages into components
-- Fix navbar title
+- Update map layout & size (and make sure map/sattelite option exists)
 - Change src="{{x}}" to [src]="x" where possible
 - Fix checkboxes not showing up if you navigate to the dashboard page
 - Animate cards loading in (animations/trigger in component.ts files)
