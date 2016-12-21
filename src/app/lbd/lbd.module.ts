@@ -8,6 +8,7 @@ import { LbdChartComponent } from './lbd-chart/lbd-chart.component';
 import { LbdTaskListComponent } from './lbd-task-list/lbd-task-list.component';
 import { NotificationService } from './notification.service';
 import { LbdTableComponent } from './lbd-table/lbd-table.component';
+import { LbdUserProfileComponent } from './lbd-user-profile/lbd-user-profile.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { LbdTableComponent } from './lbd-table/lbd-table.component';
     LbdFooterComponent,
     LbdChartComponent,
     LbdTaskListComponent,
-    LbdTableComponent
+    LbdTableComponent,
+    LbdUserProfileComponent
   ],
   exports: [
     LbdSidebarComponent,
@@ -29,7 +31,8 @@ import { LbdTableComponent } from './lbd-table/lbd-table.component';
     LbdFooterComponent,
     LbdChartComponent,
     LbdTaskListComponent,
-    LbdTableComponent
+    LbdTableComponent,
+    LbdUserProfileComponent
   ]
 })
 export class LbdModule { }
