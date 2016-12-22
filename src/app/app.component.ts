@@ -1,19 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import { SidebarItem } from './lbd/lbd-sidebar/lbd-sidebar.component';
-import { FooterItem } from './lbd/lbd-footer/lbd-footer.component';
 import { NavbarItem } from './lbd/lbd-navbar/lbd-navbar.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   public sidebarItems: SidebarItem[];
   public navbarLeftItems: NavbarItem[];
   public navbarRightItems: NavbarItem[];
-  public footerItems: FooterItem[];
-  public copywrite: string;
 
   constructor() {
   }
@@ -58,13 +54,5 @@ export class AppComponent implements OnInit {
       },
       { title: 'Log out', routerLink: '' }
     ];
-
-    this.footerItems = [
-      { title: 'Home', routerLink: '' },
-      { title: 'Company', routerLink: '' },
-      { title: 'Portfolio', routerLink: '' },
-      { title: 'Blog', routerLink: '' }
-    ];
-    this.copywrite = '&copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web';
   }
 }

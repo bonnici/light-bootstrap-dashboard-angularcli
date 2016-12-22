@@ -515,7 +515,7 @@ input:focus {
   padding: 30px 15px;
   min-height: calc(100% - 123px);
 }
-.main-panel > lbd-footer > .footer {
+.main-panel lbd-footer > .footer {
   border-top: 1px solid #e7e7e7;
 }
 .main-panel .navbar {

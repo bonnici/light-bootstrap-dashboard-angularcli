@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { AppComponent } from './app.component';
+import { FooterLayoutComponent } from './footer-layout/footer-layout.component';
 import { LbdModule } from './lbd/lbd.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
@@ -16,19 +17,25 @@ import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 
 const appRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'table', component: TableComponent },
-  { path: 'typography', component: TypographyComponent },
-  { path: 'icons', component: IconsComponent },
   { path: 'maps', component: MapsComponent },
-  { path: 'notifications', component: NotificationsComponent },
-  { path: '**', redirectTo: 'dashboard' }
+  {
+    path: '', component: FooterLayoutComponent, children:
+    [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'user', component: UserComponent },
+      { path: 'table', component: TableComponent },
+      { path: 'typography', component: TypographyComponent },
+      { path: 'icons', component: IconsComponent },
+      { path: 'notifications', component: NotificationsComponent },
+      { path: '**', redirectTo: 'dashboard' }
+    ]
+  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterLayoutComponent,
     DashboardComponent,
     UserComponent,
     TableComponent,

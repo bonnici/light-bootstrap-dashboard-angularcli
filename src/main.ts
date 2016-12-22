@@ -14,11 +14,8 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 TODO
 ----
-- Update map layout & size (and make sure map/sattelite option exists)
 - Change src="{{x}}" to [src]="x" where possible
 - Fix checkboxes not showing up if you navigate to the dashboard page
-- Animate cards loading in (animations/trigger in component.ts files)
-- Move CSS into components? Use the SASS instead?
-- Make components into pushstate?
+  - move light-bootstrap-dashboard.js code into service or guard or something
 - Add simple unit & e2e test
 */

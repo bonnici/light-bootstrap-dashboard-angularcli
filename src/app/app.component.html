@@ -9,10 +9,6 @@
   <div class="main-panel">
     <lbd-navbar [leftItems]="navbarLeftItems" [rightItems]="navbarRightItems"></lbd-navbar>
 
-    <div class="main-content">
-      <router-outlet></router-outlet>
-    </div>
-
-    <lbd-footer [items]="footerItems" [copywrite]="copywrite"></lbd-footer>
+    <router-outlet></router-outlet>
   </div>
 </div>

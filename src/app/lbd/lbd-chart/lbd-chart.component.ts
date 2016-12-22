@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+import {Component, Input, OnInit, AfterViewInit, ChangeDetectionStrategy} from '@angular/core';
 
 export interface LegendItem {
   title: string;
@@ -14,7 +14,7 @@ export enum ChartType {
 @Component({
   selector: 'lbd-chart',
   templateUrl: './lbd-chart.component.html',
-  styleUrls: ['./lbd-chart.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LbdChartComponent implements OnInit, AfterViewInit {
   static currentId: number = 1;

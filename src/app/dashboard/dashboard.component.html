@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" [@cardemail]>
       <lbd-chart
         [title]="'Email Statistics'"
         [subtitle]="'Last Campaign Performance'"
@@ -13,7 +13,7 @@
       </lbd-chart>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-8" [@carduser]>
       <lbd-chart
         [title]="'Users Behavior'"
         [subtitle]="'24 Hours performance'"
@@ -29,7 +29,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6" [@card2014sales]>
       <lbd-chart
         [title]="'2014 Sales'"
         [subtitle]="'All products including Taxes'"
@@ -43,7 +43,7 @@
       </lbd-chart>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6" [@cardtasks]>
       <lbd-task-list
         [title]="'Tasks'"
         [subtitle]="'Backend development'"

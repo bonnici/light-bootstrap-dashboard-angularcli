@@ -1,11 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
 import {NotificationService, NotificationType, NotificationOptions} from '../lbd/notification.service';
 import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.css']
+  styleUrls: ['./notifications.component.css'],
+  animations: [
+    trigger('cardnotifications', [
+      state('*', style({
+        '-ms-transform': 'translate3D(0px, 0px, 0px)',
+        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
+        '-moz-transform': 'translate3D(0px, 0px, 0px)',
+        '-o-transform': 'translate3D(0px, 0px, 0px)',
+        transform: 'translate3D(0px, 0px, 0px)',
+        opacity: 1})),
+      transition('void => *', [
+        style({opacity: 0,
+          '-ms-transform': 'translate3D(0px, 150px, 0px)',
+          '-webkit-transform': 'translate3D(0px, 150px, 0px)',
+          '-moz-transform': 'translate3D(0px, 150px, 0px)',
+          '-o-transform': 'translate3D(0px, 150px, 0px)',
+          transform: 'translate3D(0px, 150px, 0px)',
+        }),
+        animate('0.3s 0s ease-out')
+      ])
+    ])
+  ]
 })
 export class NotificationsComponent implements OnInit {
 

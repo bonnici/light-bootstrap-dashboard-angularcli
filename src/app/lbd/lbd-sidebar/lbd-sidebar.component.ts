@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 export interface SidebarItem {
   title: string;
@@ -9,7 +9,7 @@ export interface SidebarItem {
 @Component({
   selector: 'lbd-sidebar',
   templateUrl: './lbd-sidebar.component.html',
-  styleUrls: ['./lbd-sidebar.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LbdSidebarComponent {
   @Input()

@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'lbd-user-profile',
   templateUrl: './lbd-user-profile.component.html',
-  styleUrls: ['./lbd-user-profile.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LbdUserProfileComponent {
   @Input()

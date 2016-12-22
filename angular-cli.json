@@ -20,7 +20,6 @@
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/animate.css/animate.css",
         "assets/css/light-bootstrap-dashboard.css",
-        "assets/css/demo.css",
         "assets/css/pe-icon-7-stroke.css",
         "styles.css"
       ],

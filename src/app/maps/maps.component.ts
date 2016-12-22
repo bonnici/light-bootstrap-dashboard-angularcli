@@ -1,17 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, trigger, state, transition, style, animate} from '@angular/core';
 import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
-  styleUrls: ['./maps.component.css']
+  styleUrls: ['./maps.component.css'],
+  animations: [
+    trigger('maps', [
+      state('*', style({
+        opacity: 1})),
+      transition('void => *', [
+        style({opacity: 0,
+        }),
+        animate('1s 0s ease-out')
+      ])
+    ])
+  ]
 })
 export class MapsComponent implements OnInit {
   public lat = 40.748817;
   public lng = -73.985428;
   public zoom = 13;
   public markerTitle = 'Hello World!';
-  public scrollwheel = false; // we disable de scroll over the map, it is a really annoying when you scroll through page
+  public scrollwheel = false; // we disable the scroll over the map, it is a really annoying when you scroll through page
   public styles = [
     {
       'featureType': 'water',

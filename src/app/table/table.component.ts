@@ -1,11 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
 import { TableData } from '../lbd/lbd-table/lbd-table.component';
 import { NavbarTitleService } from '../lbd/navbar-title.service';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  animations: [
+    trigger('cardtable1', [
+      state('*', style({
+        '-ms-transform': 'translate3D(0px, 0px, 0px)',
+        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
+        '-moz-transform': 'translate3D(0px, 0px, 0px)',
+        '-o-transform': 'translate3D(0px, 0px, 0px)',
+        transform: 'translate3D(0px, 0px, 0px)',
+        opacity: 1})),
+      transition('void => *', [
+        style({opacity: 0,
+          '-ms-transform': 'translate3D(0px, 150px, 0px)',
+          '-webkit-transform': 'translate3D(0px, 150px, 0px)',
+          '-moz-transform': 'translate3D(0px, 150px, 0px)',
+          '-o-transform': 'translate3D(0px, 150px, 0px)',
+          transform: 'translate3D(0px, 150px, 0px)',
+        }),
+        animate('0.3s 0s ease-out')
+      ])
+    ]),
+    trigger('cardtable2', [
+      state('*', style({
+        '-ms-transform': 'translate3D(0px, 0px, 0px)',
+        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
+        '-moz-transform': 'translate3D(0px, 0px, 0px)',
+        '-o-transform': 'translate3D(0px, 0px, 0px)',
+        transform: 'translate3D(0px, 0px, 0px)',
+        opacity: 1})),
+      transition('void => *', [
+        style({opacity: 0,
+          '-ms-transform': 'translate3D(0px, 150px, 0px)',
+          '-webkit-transform': 'translate3D(0px, 150px, 0px)',
+          '-moz-transform': 'translate3D(0px, 150px, 0px)',
+          '-o-transform': 'translate3D(0px, 150px, 0px)',
+          transform: 'translate3D(0px, 150px, 0px)',
+        }),
+        animate('0.3s 0.25s ease-out')
+      ])
+    ])
+  ]
 })
 export class TableComponent implements OnInit {
   public tableData: TableData;

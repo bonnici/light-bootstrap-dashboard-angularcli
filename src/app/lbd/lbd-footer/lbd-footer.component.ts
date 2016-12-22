@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 export interface FooterItem {
   title: string;
@@ -8,7 +8,7 @@ export interface FooterItem {
 @Component({
   selector: 'lbd-footer',
   templateUrl: './lbd-footer.component.html',
-  styleUrls: ['./lbd-footer.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LbdFooterComponent {
   @Input()

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 export interface TableData {
   headerRow: string[];
@@ -8,7 +8,7 @@ export interface TableData {
 @Component({
   selector: 'lbd-table',
   templateUrl: './lbd-table.component.html',
-  styleUrls: ['./lbd-table.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LbdTableComponent {
   @Input()

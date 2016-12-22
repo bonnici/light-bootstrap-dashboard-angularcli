@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import { NavbarTitleService } from '../navbar-title.service';
 
 export interface NavbarDropdownItem {
@@ -17,7 +17,7 @@ export interface NavbarItem {
 @Component({
   selector: 'lbd-navbar',
   templateUrl: './lbd-navbar.component.html',
-  styleUrls: ['./lbd-navbar.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LbdNavbarComponent implements OnInit {
   @Input()
@@ -28,9 +28,12 @@ export class LbdNavbarComponent implements OnInit {
 
   public title: string;
 
-  constructor(private navbarTitleService: NavbarTitleService) { }
+  constructor(private navbarTitleService: NavbarTitleService, private cd: ChangeDetectorRef) { }
 
   public ngOnInit(): void {
-    this.navbarTitleService.titleChanged$.subscribe(title => this.title = title);
+    this.navbarTitleService.titleChanged$.subscribe(title => {
+      this.title = title;
+      this.cd.markForCheck();
+    });
   }
 }

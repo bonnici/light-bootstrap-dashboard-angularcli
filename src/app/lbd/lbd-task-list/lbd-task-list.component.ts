@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 export interface Task {
   title: string;
@@ -8,7 +8,7 @@ export interface Task {
 @Component({
   selector: 'lbd-task-list',
   templateUrl: './lbd-task-list.component.html',
-  styleUrls: ['./lbd-task-list.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LbdTaskListComponent {
   @Input()
