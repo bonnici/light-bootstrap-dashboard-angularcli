@@ -1,4 +1,4 @@
-import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 
 export interface Task {
   title: string;
@@ -10,7 +10,7 @@ export interface Task {
   templateUrl: './lbd-task-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LbdTaskListComponent {
+export class LbdTaskListComponent implements AfterViewInit {
   @Input()
   public title: string;
 
@@ -27,4 +27,15 @@ export class LbdTaskListComponent {
   public footerText: string;
 
   constructor() { }
+
+  ngAfterViewInit(): void {
+    $('[data-toggle="checkbox"]').each(function () {
+      if ($(this).data('toggle') === 'switch') {
+        return;
+      }
+
+      let $checkbox: any = $(this);
+      $checkbox.checkbox();
+    });
+  }
 }

@@ -4,6 +4,7 @@ import { Task } from '../lbd/lbd-task-list/lbd-task-list.component';
 import {NotificationService, NotificationOptions} from '../lbd/notification.service';
 import { NavbarTitleService } from '../lbd/navbar-title.service';
 
+declare let lbd: any;
 
 @Component({
   selector: 'app-dashboard',

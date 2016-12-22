@@ -15,7 +15,5 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 TODO
 ----
 - Change src="{{x}}" to [src]="x" where possible
-- Fix checkboxes not showing up if you navigate to the dashboard page
-  - move light-bootstrap-dashboard.js code into service or guard or something
-- Add simple unit & e2e test
+- Fix double scrollbar when sidebar is minimized & mobile navbar
 */
