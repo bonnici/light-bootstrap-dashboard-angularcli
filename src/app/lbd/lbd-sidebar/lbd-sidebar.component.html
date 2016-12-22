@@ -9,9 +9,9 @@
 
   <div class="sidebar-wrapper">
     <div class="logo">
-      <a href="{{ headerLink }}" class="simple-text">
+      <a [href]="headerLink" class="simple-text">
         <div *ngIf="headerLogoImg" class="logo-img">
-          <img src="{{ headerLogoImg }}"/>
+          <img [src]="headerLogoImg"/>
         </div>
         {{ headerText }}
       </a>

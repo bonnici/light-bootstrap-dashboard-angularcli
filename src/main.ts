@@ -14,6 +14,5 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 TODO
 ----
-- Change src="{{x}}" to [src]="x" where possible
 - Fix double scrollbar when sidebar is minimized & mobile navbar
 */
