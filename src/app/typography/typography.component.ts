@@ -1,5 +1,5 @@
 import {Component, OnInit, trigger, transition, style, animate} from '@angular/core';
-import { NavbarTitleService } from '../lbd/navbar-title.service';
+import { NavbarTitleService } from '../lbd/services/navbar-title.service';
 
 @Component({
   selector: 'app-typography',

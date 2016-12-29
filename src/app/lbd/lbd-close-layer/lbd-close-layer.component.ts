@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MobileSidebarToggleService } from '../mobile-sidebar-toggle.service';
+import { MobileSidebarToggleService } from '../services/mobile-sidebar-toggle.service';
 
 /**
  * This should be included as a sibling of main-panel so that the mobile sidebar can be closed by clicking anywhere in the non-nav part

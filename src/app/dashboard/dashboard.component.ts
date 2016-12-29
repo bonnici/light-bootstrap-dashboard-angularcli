@@ -1,8 +1,8 @@
 import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import { Task } from '../lbd/lbd-task-list/lbd-task-list.component';
-import {NotificationService, NotificationOptions} from '../lbd/notification.service';
-import { NavbarTitleService } from '../lbd/navbar-title.service';
+import {NotificationService, NotificationOptions} from '../lbd/services/notification.service';
+import { NavbarTitleService } from '../lbd/services/navbar-title.service';
 
 declare let lbd: any;
 

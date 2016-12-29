@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
-import { NavbarTitleService } from '../navbar-title.service';
+import { NavbarTitleService } from '../services/navbar-title.service';
 import { NavItem, NavItemType } from '../lbd.module';
-import { MobileSidebarToggleService } from '../mobile-sidebar-toggle.service';
+import { MobileSidebarToggleService } from '../services/mobile-sidebar-toggle.service';
 
 @Component({
   selector: 'lbd-navbar',

@@ -1,5 +1,5 @@
 import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
-import { NavbarTitleService } from '../lbd/navbar-title.service';
+import { NavbarTitleService } from '../lbd/services/navbar-title.service';
 
 @Component({
   selector: 'app-icons',

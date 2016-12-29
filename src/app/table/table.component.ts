@@ -1,6 +1,6 @@
 import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
 import { TableData } from '../lbd/lbd-table/lbd-table.component';
-import { NavbarTitleService } from '../lbd/navbar-title.service';
+import { NavbarTitleService } from '../lbd/services/navbar-title.service';
 
 @Component({
   selector: 'app-table',

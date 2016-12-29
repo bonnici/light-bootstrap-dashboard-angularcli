@@ -22,12 +22,12 @@ import { LbdNavbarComponent } from './lbd-navbar/lbd-navbar.component';
 import { LbdFooterComponent } from './lbd-footer/lbd-footer.component';
 import { LbdChartComponent } from './lbd-chart/lbd-chart.component';
 import { LbdTaskListComponent } from './lbd-task-list/lbd-task-list.component';
-import { NotificationService } from './notification.service';
+import { NotificationService } from './services/notification.service';
 import { LbdTableComponent } from './lbd-table/lbd-table.component';
 import { LbdUserProfileComponent } from './lbd-user-profile/lbd-user-profile.component';
-import { NavbarTitleService } from './navbar-title.service';
+import { NavbarTitleService } from './services/navbar-title.service';
 import { LbdCheckboxComponent } from './lbd-checkbox/lbd-checkbox.component';
-import { MobileSidebarToggleService } from './mobile-sidebar-toggle.service';
+import { MobileSidebarToggleService } from './services/mobile-sidebar-toggle.service';
 import { LbdCloseLayerComponent } from './lbd-close-layer/lbd-close-layer.component';
 
 export interface DropdownLink {
