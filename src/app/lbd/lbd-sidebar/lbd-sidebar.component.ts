@@ -5,6 +5,7 @@ export interface SidebarItem {
   routerLink: string;
   imageClass: string;
 }
+export type BackgroundColor = 'blue' | 'azure' | 'green' | 'orange' | 'red' | 'purple';
 
 @Component({
   selector: 'lbd-sidebar',
@@ -22,7 +23,17 @@ export class LbdSidebarComponent {
   public headerLogoImg: string;
 
   @Input()
+  public backgroundColor: BackgroundColor;
+
+  @Input()
+  public backgroundImg: string;
+
+  @Input()
   public items: SidebarItem[];
 
   constructor() { }
+
+  public get backgroundStyle(): { [id: string]: string; } {
+    return { 'background-image': `url(${this.backgroundImg})` };
+  }
 }

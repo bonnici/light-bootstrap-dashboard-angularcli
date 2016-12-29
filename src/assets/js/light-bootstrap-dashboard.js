@@ -35,7 +35,7 @@ $(document).ready(function(){
   $sidebar = $('.sidebar');
 
   // check if there is an image set for the sidebar's background
-  lbd.checkSidebarImage();
+  //lbd.checkSidebarImage();
 
   // Init navigation toggle for small screens
   if(window_width <= 991){
@@ -73,12 +73,14 @@ $(window).resize(function(){
     lbd.initRightMenu();
   }
 
+  /*
   function scrollTo(){
     var href = $(this).attr('href');
     $('html,body').animate({
       'scrollTop': $($(this).attr('href')).offset().top - 350
     }, 200);
   }
+  */
 });
 
 lbd = {
@@ -101,6 +103,7 @@ lbd = {
     }
   }, 17),
 
+    /*
   checkSidebarImage: function(){
     $sidebar = $('.sidebar');
     image_src = $sidebar.data('image');
@@ -110,6 +113,7 @@ lbd = {
       $sidebar.append(sidebar_container);
     }
   },
+  */
   initRightMenu: debounce(function(){
     $sidebar_wrapper = $('.sidebar-wrapper');
 
