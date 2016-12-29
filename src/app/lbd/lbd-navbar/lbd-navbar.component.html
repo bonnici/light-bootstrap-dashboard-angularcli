@@ -10,36 +10,8 @@
       <a class="navbar-brand" href="#">{{ title }}</a>
     </div>
     <div class="collapse navbar-collapse">
-      <ul *ngIf="leftNavItems" class="nav navbar-nav navbar-left">
-        <li *ngFor="let item of leftNavItems">
-          <a [routerLink]="item.routerLink" [class.dropdown-toggle]="item.dropdownItems" data-toggle="dropdown">
-            <i [ngClass]="item.iconClass"></i>
-            <b *ngIf="item.dropdownItems" class="caret"></b>
-            <span *ngIf="item.numNotifications !== undefined && item.numNotifications !== null" class="notification">{{ item.numNotifications }}</span>
-          </a>
-          <ul *ngIf="item.dropdownItems" class="dropdown-menu">
-            <li *ngFor="let dropdownItem of item.dropdownItems" [class.divider]="dropdownItem === 'separator'">
-              <a *ngIf="dropdownItem.title" [routerLink]="dropdownItem.routerLink">{{ dropdownItem.title }}</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-
-      <ul *ngIf="rightNavItems" class="nav navbar-nav navbar-right">
-        <li *ngFor="let item of rightNavItems">
-          <a [routerLink]="item.routerLink" [class.dropdown-toggle]="item.dropdownItems" data-toggle="dropdown">
-            <i [ngClass]="item.iconClass"></i>
-            {{ item.title }}
-            <b *ngIf="item.dropdownItems" class="caret"></b>
-            <span *ngIf="item.numNotifications !== undefined && item.numNotifications !== null" class="notification">{{ item.numNotifications }}</span>
-          </a>
-          <ul *ngIf="item.dropdownItems" class="dropdown-menu">
-            <li *ngFor="let dropdownItem of item.dropdownItems" [class.divider]="dropdownItem === 'separator'">
-              <a *ngIf="dropdownItem.title" [routerLink]="dropdownItem.routerLink">{{ dropdownItem.title }}</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <lbd-navbar-items [navItems]="leftNavItems" [navbarClass]="'navbar-left'" [showTitles]="false"></lbd-navbar-items>
+      <lbd-navbar-items [navItems]="rightNavItems" [navbarClass]="'navbar-right'" [showTitles]="true"></lbd-navbar-items>
     </div>
   </div>
 </nav>

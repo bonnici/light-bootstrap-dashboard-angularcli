@@ -10,40 +10,8 @@
       </a>
     </div>
 
-    <ul class="nav nav-mobile-menu">
-      <li *ngFor="let item of navbarItems" class="nav-item" routerLinkActive="active" [class.dropdown]="item.dropdownItems">
-        <a [routerLink]="item.routerLink" [class.dropdown-toggle]="item.dropdownItems" data-toggle="dropdown">
-          <i [ngClass]="item.iconClass"></i>
-          <p>
-            {{ item.title }}
-            <b *ngIf="item.dropdownItems" class="caret"></b>
-          </p>
-        </a>
-        <ul *ngIf="item.dropdownItems" class="dropdown-menu">
-          <li *ngFor="let dropdownItem of item.dropdownItems" [class.divider]="dropdownItem === 'separator'">
-            <a *ngIf="dropdownItem.title" [routerLink]="dropdownItem.routerLink">{{ dropdownItem.title }}</a>
-          </li>
-        </ul>
-      </li>
-      <li class="separator hidden-lg hidden-md"></li>
-    </ul>
-
-    <ul class="nav">
-      <li *ngFor="let item of sidebarItems" class="nav-item" routerLinkActive="active" [class.dropdown]="item.dropdownItems">
-        <a [routerLink]="item.routerLink" [class.dropdown-toggle]="item.dropdownItems" data-toggle="dropdown">
-          <i [ngClass]="item.iconClass"></i>
-          <p>
-            {{ item.title }}
-            <b *ngIf="item.dropdownItems" class="caret"></b>
-          </p>
-        </a>
-        <ul *ngIf="item.dropdownItems" class="dropdown-menu">
-          <li *ngFor="let dropdownItem of item.dropdownItems" [class.divider]="dropdownItem === 'separator'">
-            <a *ngIf="dropdownItem.title" [routerLink]="dropdownItem.routerLink">{{ dropdownItem.title }}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    <lbd-sidebar-items [navItems]="navbarItems" [navbarClass]="'nav-mobile-menu'" [showSeparator]="true"></lbd-sidebar-items>
+    <lbd-sidebar-items [navItems]="sidebarItems" [showSeparator]="false"></lbd-sidebar-items>
   </div>
 
   <div *ngIf="backgroundImg" class="sidebar-background" [ngStyle]="backgroundStyle"></div>

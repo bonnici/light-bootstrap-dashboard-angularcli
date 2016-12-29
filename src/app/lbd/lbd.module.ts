@@ -29,6 +29,8 @@ import { NavbarTitleService } from './services/navbar-title.service';
 import { LbdCheckboxComponent } from './lbd-checkbox/lbd-checkbox.component';
 import { MobileSidebarToggleService } from './services/mobile-sidebar-toggle.service';
 import { LbdCloseLayerComponent } from './lbd-close-layer/lbd-close-layer.component';
+import { LbdNavbarItemsComponent } from './lbd-navbar-items/lbd-navbar-items.component';
+import { LbdSidebarItemsComponent } from './lbd-sidebar-items/lbd-sidebar-items.component';
 
 export interface DropdownLink {
   title: string;
@@ -65,7 +67,9 @@ export interface NavItem {
     LbdTableComponent,
     LbdUserProfileComponent,
     LbdCheckboxComponent,
-    LbdCloseLayerComponent
+    LbdCloseLayerComponent,
+    LbdNavbarItemsComponent,
+    LbdSidebarItemsComponent
   ],
   exports: [
     LbdSidebarComponent,
