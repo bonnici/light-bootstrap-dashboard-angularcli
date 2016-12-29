@@ -21,37 +21,39 @@ export class AppComponent implements OnInit {
       { type: NavItemType.Sidebar, title: 'Maps', routerLink: 'maps', iconClass: 'pe-7s-map-marker' },
       { type: NavItemType.Sidebar, title: 'Notifications', routerLink: 'notifications', iconClass: 'pe-7s-bell' },
 
-      { type: NavItemType.NavbarLeft, title: 'Dashboard', iconClass: 'fa fa-dashboard' },
+      { type: NavItemType.NavbarLeft, title: 'Dashboard', routerLink: '404', iconClass: 'fa fa-dashboard' },
       {
         type: NavItemType.NavbarLeft,
         title: '5 Notifications',
+        routerLink: '404',
         iconClass: 'fa fa-globe',
         numNotifications: 5,
         dropdownItems: [
-          { title: 'Notification 1' },
-          { title: 'Notification 2' },
-          { title: 'Notification 3' },
-          { title: 'Notification 4' },
-          { title: 'Another Notification' }
+          { title: 'Notification 1', routerLink: '404' },
+          { title: 'Notification 2', routerLink: '404' },
+          { title: 'Notification 3', routerLink: '404' },
+          { title: 'Notification 4', routerLink: '404' },
+          { title: 'Another Notification', routerLink: '404' }
         ]
       },
-      { type: NavItemType.NavbarLeft, title: 'Search', iconClass: 'fa fa-search' },
+      { type: NavItemType.NavbarLeft, title: 'Search', routerLink: '404', iconClass: 'fa fa-search' },
 
-      { type: NavItemType.NavbarRight, title: 'Account' },
+      { type: NavItemType.NavbarRight, title: 'Account', routerLink: '404'},
       {
         type: NavItemType.NavbarRight,
         title: 'Dropdown',
+        routerLink: '404',
         dropdownItems: [
-          { title: 'Action' },
-          { title: 'Another action' },
-          { title: 'Something' },
-          { title: 'Another action' },
-          { title: 'Something' },
+          { title: 'Action', routerLink: '404' },
+          { title: 'Another action', routerLink: '404' },
+          { title: 'Something', routerLink: '404' },
+          { title: 'Another action', routerLink: '404' },
+          { title: 'Something', routerLink: '404' },
           'separator',
-          { title: 'Separated link' },
+          { title: 'Separated link', routerLink: '404' },
         ]
       },
-      { type: NavItemType.NavbarRight, title: 'Log out', routerLink: '' }
+      { type: NavItemType.NavbarRight, title: 'Log out', routerLink: '404' }
     ];
   }
 }

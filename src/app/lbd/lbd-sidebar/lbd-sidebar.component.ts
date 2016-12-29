@@ -36,4 +36,8 @@ export class LbdSidebarComponent {
   public get sidebarItems(): NavItem[] {
     return this.navItems.filter(i => i.type === NavItemType.Sidebar);
   }
+
+  public get navbarItems(): NavItem[] {
+    return this.navItems.filter(i => i.type === NavItemType.NavbarLeft || i.type === NavItemType.NavbarRight);
+  }
 }
