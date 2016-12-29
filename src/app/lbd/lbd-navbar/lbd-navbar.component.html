@@ -10,13 +10,12 @@
       <a class="navbar-brand" href="#">{{ title }}</a>
     </div>
     <div class="collapse navbar-collapse">
-      <ul *ngIf="leftItems" class="nav navbar-nav navbar-left">
-        <li *ngFor="let item of leftItems">
+      <ul *ngIf="leftNavItems" class="nav navbar-nav navbar-left">
+        <li *ngFor="let item of leftNavItems">
           <a [routerLink]="item.routerLink" class="dropdown-toggle" data-toggle="dropdown">
-            <i [ngClass]="item.imageClass"></i>
-            {{ item.title }}
+            <i [ngClass]="item.iconClass"></i>
             <b *ngIf="item.dropdownItems" class="caret"></b>
-            <span *ngIf="item.notifications !== undefined && item.notifications !== null" class="notification">{{ item.notifications }}</span>
+            <span *ngIf="item.numNotifications !== undefined && item.numNotifications !== null" class="notification">{{ item.numNotifications }}</span>
           </a>
           <ul *ngIf="item.dropdownItems" class="dropdown-menu">
             <li *ngFor="let dropdownItem of item.dropdownItems" [class.divider]="!dropdownItem.title">
@@ -26,13 +25,13 @@
         </li>
       </ul>
 
-      <ul *ngIf="rightItems" class="nav navbar-nav navbar-right">
-        <li *ngFor="let item of rightItems">
+      <ul *ngIf="rightNavItems" class="nav navbar-nav navbar-right">
+        <li *ngFor="let item of rightNavItems">
           <a [routerLink]="item.routerLink" class="dropdown-toggle" data-toggle="dropdown">
-            <i [ngClass]="item.imageClass"></i>
+            <i [ngClass]="item.iconClass"></i>
             {{ item.title }}
             <b *ngIf="item.dropdownItems" class="caret"></b>
-            <span *ngIf="item.notifications !== undefined && item.notifications !== null" class="notification">{{ item.notifications }}</span>
+            <span *ngIf="item.numNotifications !== undefined && item.numNotifications !== null" class="notification">{{ item.numNotifications }}</span>
           </a>
           <ul *ngIf="item.dropdownItems" class="dropdown-menu">
             <li *ngFor="let dropdownItem of item.dropdownItems" [class.divider]="!dropdownItem.title">

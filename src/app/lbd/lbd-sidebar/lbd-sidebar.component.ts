@@ -1,10 +1,6 @@
 import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
+import { NavItem, NavItemType } from '../lbd.module';
 
-export interface SidebarItem {
-  title: string;
-  routerLink: string;
-  imageClass: string;
-}
 export type BackgroundColor = 'blue' | 'azure' | 'green' | 'orange' | 'red' | 'purple';
 
 @Component({
@@ -29,11 +25,15 @@ export class LbdSidebarComponent {
   public backgroundImg: string;
 
   @Input()
-  public items: SidebarItem[];
+  public navItems: NavItem[];
 
   constructor() { }
 
   public get backgroundStyle(): { [id: string]: string; } {
     return { 'background-image': `url(${this.backgroundImg})` };
+  }
+
+  public get sidebarItems(): NavItem[] {
+    return this.navItems.filter(i => i.type === NavItemType.Sidebar);
   }
 }

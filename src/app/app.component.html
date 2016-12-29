@@ -5,11 +5,11 @@
     [headerLogoImg]="'/assets/img/angular2-logo-white.png'"
     [backgroundColor]="'red'"
     [backgroundImg]="'/assets/img/sidebar-5.jpg'"
-    [items]="sidebarItems">
+    [navItems]="navItems">
   </lbd-sidebar>
 
   <div class="main-panel">
-    <lbd-navbar [leftItems]="navbarLeftItems" [rightItems]="navbarRightItems"></lbd-navbar>
+    <lbd-navbar [navItems]="navItems"></lbd-navbar>
 
     <router-outlet></router-outlet>
   </div>

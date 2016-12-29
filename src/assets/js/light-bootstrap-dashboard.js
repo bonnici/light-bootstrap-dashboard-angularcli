@@ -14,6 +14,7 @@
 
  */
 
+/*
 var searchVisible = 0;
 var transparent = true;
 
@@ -23,6 +24,7 @@ var fixedTop = false;
 var mobile_menu_initialized = false,
   toggle_initialized = false,
   mobile_menu_visible = 0;
+*/
 
 $(document).ready(function(){
   window_width = $(window).width();
@@ -32,15 +34,14 @@ $(document).ready(function(){
       'scrollTop': $($(this).attr('href')).offset().top - 100
     }, 200);
   })
-  $sidebar = $('.sidebar');
-
-  // check if there is an image set for the sidebar's background
-  //lbd.checkSidebarImage();
+  //$sidebar = $('.sidebar');
 
   // Init navigation toggle for small screens
+  /*
   if(window_width <= 991){
     lbd.initRightMenu();
   }
+  */
 
   //  Activate the tooltips
   $('[rel="tooltip"]').tooltip();
@@ -49,9 +50,7 @@ $(document).ready(function(){
   if($('.switch').length != 0){
     $('.switch')['bootstrapSwitch']();
   }
-  // if($('[data-toggle="checkbox"]').length != 0){
-  //     $('[data-toggle="checkbox"]')['bootstrapSwitch']();
-  // }
+
   //      Activate regular switches
   if($("[data-toggle='switch']").length != 0){
     $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
@@ -67,22 +66,23 @@ $(document).ready(function(){
   $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
 });
 
+/*
 // activate collapse right menu when the windows is resized
 $(window).resize(function(){
   if($sidebar.length != 0){
     lbd.initRightMenu();
   }
 
-  /*
   function scrollTo(){
     var href = $(this).attr('href');
     $('html,body').animate({
       'scrollTop': $($(this).attr('href')).offset().top - 350
     }, 200);
   }
-  */
 });
+ */
 
+/*
 lbd = {
   misc:{
     navbar_menu_visible: 0
@@ -103,17 +103,6 @@ lbd = {
     }
   }, 17),
 
-    /*
-  checkSidebarImage: function(){
-    $sidebar = $('.sidebar');
-    image_src = $sidebar.data('image');
-
-    if(image_src !== undefined){
-      sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>'
-      $sidebar.append(sidebar_container);
-    }
-  },
-  */
   initRightMenu: debounce(function(){
     $sidebar_wrapper = $('.sidebar-wrapper');
 
@@ -230,3 +219,5 @@ function debounce(func, wait, immediate) {
     if (immediate && !timeout) func.apply(context, args);
   };
 };
+
+ */

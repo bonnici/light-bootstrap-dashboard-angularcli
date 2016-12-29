@@ -11,9 +11,9 @@
     </div>
 
     <ul class="nav">
-      <li *ngFor="let item of items" routerLinkActive="active">
+      <li *ngFor="let item of sidebarItems" routerLinkActive="active">
         <a [routerLink]="item.routerLink">
-          <i [ngClass]="item.imageClass"></i>
+          <i [ngClass]="item.iconClass"></i>
           <p>{{ item.title }}</p>
         </a>
       </li>

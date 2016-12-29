@@ -1,58 +1,57 @@
 import {Component, OnInit} from '@angular/core';
-import { SidebarItem } from './lbd/lbd-sidebar/lbd-sidebar.component';
-import { NavbarItem } from './lbd/lbd-navbar/lbd-navbar.component';
+import { NavItem, NavItemType } from './lbd/lbd.module';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  public sidebarItems: SidebarItem[];
-  public navbarLeftItems: NavbarItem[];
-  public navbarRightItems: NavbarItem[];
+  public navItems: NavItem[];
 
   constructor() {
   }
 
   public ngOnInit(): void {
-    this.sidebarItems = [
-      { title: 'Dashboard', routerLink: 'dashboard', imageClass: 'pe-7s-graph' },
-      { title: 'User Profile', routerLink: 'user', imageClass: 'pe-7s-user' },
-      { title: 'Table List', routerLink: 'table', imageClass: 'pe-7s-note2' },
-      { title: 'Typography', routerLink: 'typography', imageClass: 'pe-7s-news-paper' },
-      { title: 'Icons', routerLink: 'icons', imageClass: 'pe-7s-science' },
-      { title: 'Maps', routerLink: 'maps', imageClass: 'pe-7s-map-marker' },
-      { title: 'Notifications', routerLink: 'notifications', imageClass: 'pe-7s-bell' }
-    ];
+    this.navItems = [
+      { type: NavItemType.Sidebar, title: 'Dashboard', routerLink: 'dashboard', iconClass: 'pe-7s-graph' },
+      { type: NavItemType.Sidebar, title: 'User Profile', routerLink: 'user', iconClass: 'pe-7s-user' },
+      { type: NavItemType.Sidebar, title: 'Table List', routerLink: 'table', iconClass: 'pe-7s-note2' },
+      { type: NavItemType.Sidebar, title: 'Typography', routerLink: 'typography', iconClass: 'pe-7s-news-paper' },
+      { type: NavItemType.Sidebar, title: 'Icons', routerLink: 'icons', iconClass: 'pe-7s-science' },
+      { type: NavItemType.Sidebar, title: 'Maps', routerLink: 'maps', iconClass: 'pe-7s-map-marker' },
+      { type: NavItemType.Sidebar, title: 'Notifications', routerLink: 'notifications', iconClass: 'pe-7s-bell' },
 
-    this.navbarLeftItems = [
-      { imageClass: 'fa fa-dashboard', routerLink: '' },
+      { type: NavItemType.NavbarLeft, title: 'Dashboard', iconClass: 'fa fa-dashboard' },
       {
-        imageClass: 'fa fa-globe', routerLink: '', notifications: 5, dropdownItems: [
-          { title: 'Notification 1', routerLink: '' },
-          { title: 'Notification 2', routerLink: '' },
-          { title: 'Notification 3', routerLink: '' },
-          { title: 'Notification 4', routerLink: '' },
-          { title: 'Another Notification', routerLink: 'maps' }
+        type: NavItemType.NavbarLeft,
+        title: '5 Notifications',
+        iconClass: 'fa fa-globe',
+        numNotifications: 5,
+        dropdownItems: [
+          { title: 'Notification 1' },
+          { title: 'Notification 2' },
+          { title: 'Notification 3' },
+          { title: 'Notification 4' },
+          { title: 'Another Notification' }
         ]
       },
-      { imageClass: 'fa fa-search', routerLink: '' }
-    ];
+      { type: NavItemType.NavbarLeft, title: 'Search', iconClass: 'fa fa-search' },
 
-    this.navbarRightItems = [
-      { title: 'Account', routerLink: '' },
+      { type: NavItemType.NavbarRight, title: 'Account' },
       {
-        title: 'Dropdown', routerLink: '', dropdownItems: [
-          { title: 'Action', routerLink: '' },
-          { title: 'Another action', routerLink: '' },
-          { title: 'Something', routerLink: '' },
-          { title: 'Another action', routerLink: '' },
-          { title: 'Something', routerLink: '' },
-          { },
-          { title: 'Separated link', routerLink: '' },
+        type: NavItemType.NavbarRight,
+        title: 'Dropdown',
+        dropdownItems: [
+          { title: 'Action' },
+          { title: 'Another action' },
+          { title: 'Something' },
+          { title: 'Another action' },
+          { title: 'Something' },
+          'separator',
+          { title: 'Separated link' },
         ]
       },
-      { title: 'Log out', routerLink: '' }
+      { type: NavItemType.NavbarRight, title: 'Log out', routerLink: '' }
     ];
   }
 }

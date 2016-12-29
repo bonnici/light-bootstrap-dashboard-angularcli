@@ -1,18 +1,6 @@
 import {Component, Input, OnInit, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import { NavbarTitleService } from '../navbar-title.service';
-
-export interface NavbarDropdownItem {
-  title?: string;
-  routerLink?: string;
-}
-
-export interface NavbarItem {
-  title?: string;
-  routerLink?: string;
-  imageClass?: string;
-  dropdownItems?: NavbarDropdownItem[];
-  notifications?: number;
-}
+import { NavItem, NavItemType } from '../lbd.module';
 
 @Component({
   selector: 'lbd-navbar',
@@ -21,10 +9,7 @@ export interface NavbarItem {
 })
 export class LbdNavbarComponent implements OnInit {
   @Input()
-  public leftItems: NavbarItem[];
-
-  @Input()
-  public rightItems: NavbarItem[];
+  public navItems: NavItem[];
 
   public title: string;
 
@@ -35,5 +20,13 @@ export class LbdNavbarComponent implements OnInit {
       this.title = title;
       this.cd.markForCheck();
     });
+  }
+
+  public get leftNavItems(): NavItem[] {
+    return this.navItems.filter(i => i.type === NavItemType.NavbarLeft);
+  }
+
+  public get rightNavItems(): NavItem[] {
+    return this.navItems.filter(i => i.type === NavItemType.NavbarRight);
   }
 }
