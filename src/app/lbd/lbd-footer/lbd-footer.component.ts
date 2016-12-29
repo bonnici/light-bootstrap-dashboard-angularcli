@@ -12,7 +12,7 @@ export interface FooterItem {
 })
 export class LbdFooterComponent {
   @Input()
-  public copywrite: string;
+  public copyright: string;
 
   @Input()
   public items: FooterItem[];

@@ -14,8 +14,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 /*
 TODO
 ----
-- Maybe move some component-specific CSS into components (e.g. sidebar image/color stuff)
-- Test with different options in all components
+- Look into inconsistent dropdown behavior for left/right navbar and top/bottom sidebar
 - Run test & lint
 - Test on FF + IE
 */
