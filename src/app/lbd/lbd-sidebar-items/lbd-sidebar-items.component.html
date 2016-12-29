@@ -1,6 +1,6 @@
 <ul class="nav {{ navbarClass }}">
-  <li *ngFor="let item of navItems" class="nav-item" routerLinkActive="active" [class.dropdown]="item.dropdownItems">
-    <a [routerLink]="item.routerLink" [class.dropdown-toggle]="item.dropdownItems" data-toggle="dropdown">
+  <li *ngFor="let item of navItems" class="nav-item" [routerLinkActive]="item.routerLink ? 'active' : ''" [class.dropdown]="item.dropdownItems">
+    <a [routerLink]="item.routerLink || []" [class.dropdown-toggle]="item.dropdownItems" [attr.data-toggle]="item.dropdownItems ? 'dropdown' : null">
       <i [ngClass]="item.iconClass"></i>
       <p>
         {{ item.title }}
@@ -9,7 +9,7 @@
     </a>
     <ul *ngIf="item.dropdownItems" class="dropdown-menu">
       <li *ngFor="let dropdownItem of item.dropdownItems" [class.divider]="dropdownItem === 'separator'">
-        <a *ngIf="dropdownItem.title" [routerLink]="dropdownItem.routerLink">{{ dropdownItem.title }}</a>
+        <a *ngIf="dropdownItem.title" [routerLink]="dropdownItem.routerLink || []">{{ dropdownItem.title }}</a>
       </li>
     </ul>
   </li>

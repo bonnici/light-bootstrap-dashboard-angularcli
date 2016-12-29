@@ -10,11 +10,3 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
-
-/*
-TODO
-----
-- Look into inconsistent dropdown behavior for left/right navbar and top/bottom sidebar
-- Run test & lint
-- Test on FF + IE
-*/

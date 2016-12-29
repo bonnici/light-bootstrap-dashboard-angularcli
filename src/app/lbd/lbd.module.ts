@@ -34,7 +34,7 @@ import { LbdSidebarItemsComponent } from './lbd-sidebar-items/lbd-sidebar-items.
 
 export interface DropdownLink {
   title: string;
-  routerLink: string;
+  routerLink?: string;
 }
 
 export enum NavItemType {
@@ -46,7 +46,7 @@ export enum NavItemType {
 export interface NavItem {
   type: NavItemType;
   title: string;
-  routerLink: string;
+  routerLink?: string;
   iconClass?: string;
   numNotifications?: number;
   dropdownItems?: (DropdownLink | 'separator')[];
