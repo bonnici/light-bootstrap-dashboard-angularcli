@@ -13,6 +13,9 @@ export class LbdNavbarComponent implements OnInit {
 
   public title: string;
 
+  public mobileSidebarOpen: boolean = false;
+  public navCloseIcon: boolean = false;
+
   constructor(private navbarTitleService: NavbarTitleService, private cd: ChangeDetectorRef) { }
 
   public ngOnInit(): void {
@@ -28,5 +31,31 @@ export class LbdNavbarComponent implements OnInit {
 
   public get rightNavItems(): NavItem[] {
     return this.navItems.filter(i => i.type === NavItemType.NavbarRight);
+  }
+
+  public navbarToggle() {
+    this.mobileSidebarOpen ? this.closeMobileNav() : this.openMobileNav();
+  }
+
+  public closeMobileNav() {
+    $('html').removeClass('nav-open');
+    this.mobileSidebarOpen = false;
+    this.cd.markForCheck();
+
+    setTimeout(() => {
+      this.navCloseIcon = false;
+      this.cd.markForCheck();
+    }, 400);
+  }
+
+  private openMobileNav() {
+    $('html').addClass('nav-open');
+    this.mobileSidebarOpen = true;
+    this.cd.markForCheck();
+
+    setTimeout(() => {
+      this.navCloseIcon = true;
+      this.cd.markForCheck();
+    }, 430);
   }
 }
