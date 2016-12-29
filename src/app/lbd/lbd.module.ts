@@ -27,6 +27,8 @@ import { LbdTableComponent } from './lbd-table/lbd-table.component';
 import { LbdUserProfileComponent } from './lbd-user-profile/lbd-user-profile.component';
 import { NavbarTitleService } from './navbar-title.service';
 import { LbdCheckboxComponent } from './lbd-checkbox/lbd-checkbox.component';
+import { MobileSidebarToggleService } from './mobile-sidebar-toggle.service';
+import { LbdCloseLayerComponent } from './lbd-close-layer/lbd-close-layer.component';
 
 export interface DropdownLink {
   title: string;
@@ -53,7 +55,7 @@ export interface NavItem {
     CommonModule,
     RouterModule
   ],
-  providers: [NotificationService, NavbarTitleService],
+  providers: [NotificationService, NavbarTitleService, MobileSidebarToggleService],
   declarations: [
     LbdSidebarComponent,
     LbdNavbarComponent,
@@ -62,7 +64,8 @@ export interface NavItem {
     LbdTaskListComponent,
     LbdTableComponent,
     LbdUserProfileComponent,
-    LbdCheckboxComponent
+    LbdCheckboxComponent,
+    LbdCloseLayerComponent
   ],
   exports: [
     LbdSidebarComponent,
@@ -71,7 +74,8 @@ export interface NavItem {
     LbdChartComponent,
     LbdTaskListComponent,
     LbdTableComponent,
-    LbdUserProfileComponent
+    LbdUserProfileComponent,
+    LbdCloseLayerComponent
   ]
 })
 export class LbdModule { }

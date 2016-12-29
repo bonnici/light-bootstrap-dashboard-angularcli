@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import { NavbarTitleService } from '../navbar-title.service';
 import { NavItem, NavItemType } from '../lbd.module';
+import { MobileSidebarToggleService } from '../mobile-sidebar-toggle.service';
 
 @Component({
   selector: 'lbd-navbar',
@@ -16,12 +17,17 @@ export class LbdNavbarComponent implements OnInit {
   public mobileSidebarOpen: boolean = false;
   public navCloseIcon: boolean = false;
 
-  constructor(private navbarTitleService: NavbarTitleService, private cd: ChangeDetectorRef) { }
+  constructor(private navbarTitleService: NavbarTitleService, private mobileSidebarToggleService: MobileSidebarToggleService,
+              private cd: ChangeDetectorRef) { }
 
   public ngOnInit(): void {
     this.navbarTitleService.titleChanged$.subscribe(title => {
       this.title = title;
       this.cd.markForCheck();
+    });
+
+    this.mobileSidebarToggleService.mobileSidebarVisibilityChanged$.subscribe(visible => {
+      visible ? this.openMobileNav() : this.closeMobileNav();
     });
   }
 
@@ -34,10 +40,12 @@ export class LbdNavbarComponent implements OnInit {
   }
 
   public navbarToggle() {
-    this.mobileSidebarOpen ? this.closeMobileNav() : this.openMobileNav();
+    this.mobileSidebarOpen ?
+      this.mobileSidebarToggleService.updateVisibility(false) :
+      this.mobileSidebarToggleService.updateVisibility(true);
   }
 
-  public closeMobileNav() {
+  private closeMobileNav() {
     $('html').removeClass('nav-open');
     this.mobileSidebarOpen = false;
     this.cd.markForCheck();
