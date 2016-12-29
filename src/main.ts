@@ -15,4 +15,5 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 TODO
 ----
 - Fix double scrollbar when sidebar is minimized & mobile navbar
+- Move everything in light-bootstrap-dashboard.js into component code (test using new page as needed)
 */

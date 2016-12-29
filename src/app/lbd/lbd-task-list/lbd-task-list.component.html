@@ -9,9 +9,7 @@
         <tbody>
         <tr *ngFor="let task of tasks; let i = index;">
           <td>
-            <label class="checkbox">
-              <input type="checkbox" value="" data-toggle="checkbox" [attr.checked]="task.checked ? true : null">
-            </label>
+            <lbd-checkbox [checked]="task.checked"></lbd-checkbox>
           </td>
           <td>{{ task.title }}</td>
           <td class="td-actions text-right">
