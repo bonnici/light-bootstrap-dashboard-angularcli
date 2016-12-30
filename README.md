@@ -1,4 +1,8 @@
-# LbdAngularcli
+# Light Bootstrap Dashboard Angular CLI
+
+This is a re-implementation of the [Light-Bootstrap-Dashboard-Angular2](https://github.com/creativetimofficial/light-bootstrap-dashboard-angular) 
+dashboard template from [creative-tim](http://www.creative-tim.com/), see their GitHub for more information. It has been written to be a bit 
+more component-focused and to work better with Angular CLI. 
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
