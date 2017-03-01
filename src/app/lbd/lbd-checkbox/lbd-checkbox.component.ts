@@ -17,7 +17,7 @@ export class LbdCheckboxComponent implements AfterViewInit {
   constructor() { }
 
   public ngAfterViewInit() {
-    let $checkbox: any = $(this.checkbox.nativeElement);
+    const $checkbox: any = $(this.checkbox.nativeElement);
     $checkbox.checkbox();
   }
 }

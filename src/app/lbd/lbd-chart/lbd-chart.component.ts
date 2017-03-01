@@ -17,7 +17,7 @@ export enum ChartType {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LbdChartComponent implements OnInit, AfterViewInit {
-  static currentId: number = 1;
+  static currentId = 1;
 
   @Input()
   public title: string;
@@ -59,7 +59,7 @@ export class LbdChartComponent implements OnInit, AfterViewInit {
   }
 
   public ngAfterViewInit(): void {
-    let params = [`#${this.chartId}`, this.chartData, this.chartOptions, this.chartResponsive];
+    const params = [`#${this.chartId}`, this.chartData, this.chartOptions, this.chartResponsive];
 
     switch (this.chartType) {
       case ChartType.Pie:

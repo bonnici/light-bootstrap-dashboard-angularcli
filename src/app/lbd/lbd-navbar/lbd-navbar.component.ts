@@ -14,8 +14,8 @@ export class LbdNavbarComponent implements OnInit {
 
   public title: string;
 
-  public mobileSidebarOpen: boolean = false;
-  public navCloseIcon: boolean = false;
+  public mobileSidebarOpen = false;
+  public navCloseIcon = false;
 
   constructor(private navbarTitleService: NavbarTitleService, private mobileSidebarToggleService: MobileSidebarToggleService,
               private cd: ChangeDetectorRef) { }

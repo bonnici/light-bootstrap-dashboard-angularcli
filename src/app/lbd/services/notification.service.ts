@@ -10,10 +10,10 @@ export enum NotificationType {
 export class NotificationOptions {
   public message: string;
   public icon: string = null;
-  public timer: number = 4000;
+  public timer = 4000;
   public type: NotificationType = NotificationType.Info;
-  public from: string = 'top';
-  public align: string = 'right';
+  public from = 'top';
+  public align = 'right';
 
   public constructor(
     fields: {

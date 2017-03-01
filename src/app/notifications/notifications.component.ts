@@ -37,7 +37,7 @@ export class NotificationsComponent implements OnInit {
   }
 
   public showNotification(from: string, align: string) {
-    let type = Math.floor((Math.random() * 4) + 1);
+    const type = Math.floor((Math.random() * 4) + 1);
 
     this.notificationService.notify(new NotificationOptions({
       message: 'Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.',

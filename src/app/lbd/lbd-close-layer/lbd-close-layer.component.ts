@@ -11,7 +11,7 @@ import { MobileSidebarToggleService } from '../services/mobile-sidebar-toggle.se
   template: '<div *ngIf="mobileSidebarOpen" class="close-layer visible" (click)="closeSidebar()"></div>'
 })
 export class LbdCloseLayerComponent implements OnInit {
-  public mobileSidebarOpen: boolean = false;
+  public mobileSidebarOpen = false;
 
   constructor(private mobileSidebarToggleService: MobileSidebarToggleService) { }
 
