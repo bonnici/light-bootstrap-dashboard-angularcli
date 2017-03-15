@@ -6,3 +6,6 @@ interface JQueryStatic {
 }
 
 declare let Chartist: any;
+
+declare let navigator: any;
+declare let google: any;

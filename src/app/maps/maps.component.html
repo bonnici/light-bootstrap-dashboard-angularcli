@@ -1,4 +1,8 @@
 <div class="maps-container" [@maps]>
+  <div class="form-group">
+    <input placeholder="search for location"  autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+  </div>
+
   <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [scrollwheel]="scrollwheel" [styles]="styles" [mapTypeControl]="true">
     <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [title]="markerTitle"></sebm-google-map-marker>
   </sebm-google-map>

@@ -1,5 +1,7 @@
-import {Component, OnInit, trigger, state, transition, style, animate} from '@angular/core';
+import { Component, OnInit, trigger, state, transition, style, animate, ElementRef, ViewChild, NgZone } from '@angular/core';
 import { NavbarTitleService } from '../lbd/services/navbar-title.service';
+import { FormControl } from '@angular/forms';
+import { MapsAPILoader } from 'angular2-google-maps/core';
 
 @Component({
   selector: 'app-maps',
@@ -18,6 +20,10 @@ import { NavbarTitleService } from '../lbd/services/navbar-title.service';
   ]
 })
 export class MapsComponent implements OnInit {
+  @ViewChild('search')
+  public searchElementRef: ElementRef;
+
+  public searchControl: FormControl;
   public lat = 40.748817;
   public lng = -73.985428;
   public zoom = 13;
@@ -155,9 +161,50 @@ export class MapsComponent implements OnInit {
     }
   ];
 
-  constructor(private navbarTitleService: NavbarTitleService) { }
+  constructor(private navbarTitleService: NavbarTitleService,
+              private mapsAPILoader: MapsAPILoader,
+              private ngZone: NgZone) { }
 
   public ngOnInit() {
     this.navbarTitleService.updateTitle('Maps');
+
+    // create search FormControl
+    this.searchControl = new FormControl();
+
+    // set current position
+    this.setCurrentPosition();
+
+    // load Places Autocomplete
+    this.mapsAPILoader.load().then(() => {
+      const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        types: ['address']
+      });
+      autocomplete.addListener('place_changed', () => {
+        this.ngZone.run(() => {
+          // get the place result
+          const place: any = autocomplete.getPlace();
+
+          // verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          // set latitude, longitude and zoom
+          this.lat = place.geometry.location.lat();
+          this.lng = place.geometry.location.lng();
+          this.zoom = 12;
+        });
+      });
+    });
+  }
+
+  private setCurrentPosition() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+        this.zoom = 12;
+      });
+    }
   }
 }

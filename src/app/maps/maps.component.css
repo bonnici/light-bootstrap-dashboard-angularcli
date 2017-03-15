@@ -9,6 +9,10 @@
   height: calc(100% - 61px);
 }
 
+.maps-container .form-group {
+  margin-top: 1em;
+}
+
 .sebm-google-map-container {
   height: 100%;
 }
